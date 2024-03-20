@@ -88,7 +88,7 @@ defmodule InkTest do
   end
 
   test "respects log level" do
-    Logger.configure_backend(Ink, level: :warn)
+    Logger.configure_backend(Ink, level: :warning)
     Logger.info("test")
 
     refute_receive {:io_request, _, _, {:put_chars, :unicode, _}}
